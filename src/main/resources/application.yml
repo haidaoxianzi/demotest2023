@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active: dev
+
+
+person:
+  usrName: anan
+  address: jilin
+  age: 15
+  birth: 2021/08/08 09:09:08
+  boss: true
+  map:
+    k1: 1
+    k2: v2
+    k3: a4
+
+  hobbys:
+    - 乒乓球
+    - 网球
+    - 羽毛球
+    - 足球
+  dept:
+    id: 1
+    curMonth: 20231215
+    remark: 财务部
+  allDeptMap:
+    k1:
+      id: 1
+      curMonth: 20231215
+      remark: 行政部
+    k2:
+      id: 2
+      curMonth: 20231214
+      remark: 财务部
+    k3:
+      id: 3
+      curMonth: 20231216
+      remark: 销售部

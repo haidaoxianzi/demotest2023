@@ -1,0 +1,75 @@
+server:
+  port: 8081
+
+spring:
+  mail:
+    host: smtp.mobizone.cn
+    port: 465
+    username: wq.wu@mobizone.cn
+    password: 123wq@abc
+#    default-encoding: UTF-8
+    protocol: smtp
+    properties: # 配置以SSL的方式发送, 这个需要使用这种方式并且端口是465
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+            socketFactory:
+              class: com.sun.mail.util.MailSSLSocketFactory
+              fallback: false
+        debug: true
+
+  redis:
+    database: 1
+    host: 127.0.0.1
+#    127.0.0.1
+#39.106.53.44 小乔
+    port: 8000
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1
+        max-idle: 10
+        min-idle: 0
+#    decode_responses: true
+#    password: pythonvip
+
+uat2syncdataproperty:
+  # 线上数据excel
+  onlineOriginDataExcel: /Users/gina/Downloads/FeiHe/onlinedata.xlsx
+  # uat2数据excel
+  uat2OriginDataExcel: /Users/gina/Downloads/FeiHe/uat2data.xlsx
+  #  生成excel路径
+  genExcelPath: /Users/gina/Downloads/FeiHe/
+
+
+person:
+  usrName: anan
+  address: jilin
+  age: 15
+  birth: 2021/08/08 09:09:08
+  boss: true
+  map:
+    k1: 1
+    k2: v2
+    k3: a4
+
+  hobbys:
+    - 乒乓球
+    - 网球
+    - 羽毛球
+    - 足球
+  dept:
+    deptId: 1
+    deptName: 财务部
+  allDeptMap:
+    k1:
+      deptId: 2
+      deptName: 行政部
+    k2:
+      deptId: 2
+      deptName: 财务部
+    k3:
+      deptId: 3
+      deptName: 销售部

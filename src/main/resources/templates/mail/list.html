@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<style>
+
+
+
+  tr.odd td {
+    background-color: #f0faaa;
+  }
+
+  td.number {
+    text-align: right;
+  }
+
+
+  table {
+    width: 100%;
+    border: 1px solid #000;
+    border-collapse: collapse;
+  }
+
+  table > tbody > tr > td, table > thead > tr > th {
+    padding: 2px 10px;
+    border-left: 1px dotted #000000;
+    vertical-align: top;
+    line-height: 20px;
+  }
+
+  table > tbody > tr, table > thead > tr {
+    border-bottom: 1px solid #000000;
+  }
+
+  table th {
+    background-color: #99cc33;
+  }
+
+  table > tbody > tr > td > a, table > tbody > tr > td > a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #352726;
+    padding: 2px 10px;
+    color: #f0faaa;
+    margin-left: 10px;
+    text-transform: uppercase;
+    border: 0px;
+  }
+
+</style>
+  <head>
+    <title>统计业务表生成数据结果</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+
+    <h1>统计业务表生成数据结果</h1>
+  
+    <table>
+      <tr>
+        <th>生成月份</th>
+        <th>库名</th>
+        <th>表名</th>
+        <th>计划生成(条)</th>
+        <th>实际生成(条)</th>
+        <th>成功率%</th>
+        <th>未生成(条)</th>
+        <th>创建时间</th>
+        <th>更新时间</th>
+        <th>备注</th>
+      </tr>
+      <tr th:each="o : ${pageViewList}" th:class="${o.id % 2 == 0}? 'odd'" >
+
+        <td th:text="${o.curMonth}"   ></td>
+        <td th:text="${o.dbName}" ></td>
+        <td th:text="${o.tableName}" ></td>
+        <td th:text="${o.planGenDataCnt}" ></td>
+        <td th:text="${o.actualGenDataCnt}"></td>
+        <td th:text="${o.genDataSuccessRate}"></td>
+        <td th:text="${o.remainToGenCnt}"></td>
+        <td th:text="${o.gmtCreate}"></td>
+        <td th:text="${o.gmtModified}"></td>
+        <td th:text="${o.remark}"></td>
+
+
+      </tr>
+    </table>
+
+
+    
+  </body>
+  
+</html>
+
